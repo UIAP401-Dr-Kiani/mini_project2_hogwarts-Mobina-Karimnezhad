@@ -1,0 +1,2 @@
+E:\C#_Projects\Hogwarts\Hogwarts school\Hogwarts school\bin\Debug\Hogwarts school.exe.config
+E:\C#_Projects\Hogwarts\mini_project2_hogwarts-Mobina-Karimnezhad\Hogwarts school\Hogwarts school\bin\Debug\Hogwarts school.exe.config
