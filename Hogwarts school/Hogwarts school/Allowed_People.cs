@@ -6,7 +6,28 @@ using System.Threading.Tasks;
 
 namespace Hogwarts_school
 {
-    class Allowed_People
+    public class Allowed_People : Human
     {
+        public int RoomNumber { get; set; }
+
+        //--------------------------------------
+        public string Schedule { get; set; }
+
+        //--------------------------------------
+        public string pet { get; set; }
+
+        //--------------------------------------
+        public string Group { get; set; }
+
+        //--------------------------------------
+        public bool Suitcase { get; set; }
+
+        //--------------------------------------
+        public string Role { get; set; }
+
+        //--------------------------------------
+        public string[] Letter { get; set; }
+
+        //---------------------------------------
     }
 }

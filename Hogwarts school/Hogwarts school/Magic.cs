@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Hogwarts_school
 {
-    class Magic
+    class Magic : Lessons
     {
+        List<string> Spells = new List<string>();
     }
 }

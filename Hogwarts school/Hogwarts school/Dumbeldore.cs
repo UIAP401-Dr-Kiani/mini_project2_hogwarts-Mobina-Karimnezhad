@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hogwarts_school
 {
-    class Dumbeldore
+    class Dumbeldore : Allowed_People
     {
     }
 }

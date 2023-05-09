@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Hogwarts_school
 {
-    class Type_Kinds
+    enum Type_Kinds
     {
+        Hufflepuff,
+        Gryffindor,
+        Ravenclaw,
+        Slytherin
     }
+
 }

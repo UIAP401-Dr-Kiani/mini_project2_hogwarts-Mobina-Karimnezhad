@@ -8,5 +8,11 @@ namespace Hogwarts_school
 {
     class Plant
     {
+        public string Name { get; set; }
+
+        //--------------------------------------
+        public int Num { get; set; }
+
+        //--------------------------------------
     }
 }

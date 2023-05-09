@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Hogwarts_school
 {
-    class Teacher
+    class Teacher : Allowed_People
     {
+        public bool Same_Time { get; set; }
+        
     }
 }

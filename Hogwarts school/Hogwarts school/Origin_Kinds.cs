@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Hogwarts_school
 {
-    class Origin_Kinds
+    enum Origin_Kinds
     {
+        Half_blood,
+        Pure_blood,
+        Muggle_blood
     }
 }

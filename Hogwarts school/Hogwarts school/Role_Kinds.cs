@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Hogwarts_school
 {
-    class Role_Kinds
+    enum role_Kind
     {
+        Teacher,
+        Student
     }
 }

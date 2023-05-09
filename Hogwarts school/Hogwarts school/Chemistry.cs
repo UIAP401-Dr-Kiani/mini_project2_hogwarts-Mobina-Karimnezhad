@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Hogwarts_school
 {
-    class Chemistry
+    class Chemistry : Lessons
+
     {
+
+        List<string> Chemical = new List<string>();
     }
 }

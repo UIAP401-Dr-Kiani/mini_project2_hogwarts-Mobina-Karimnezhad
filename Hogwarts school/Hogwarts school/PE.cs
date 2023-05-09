@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Hogwarts_school
 {
-    class PE
+    class PE : Lessons
     {
+        public string PE_Kind { get; set; }
+
     }
 }

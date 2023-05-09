@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Hogwarts_school
 {
-    class Pet_Kinds
+    enum Pet_Kind
     {
+        Owl,
+        Rat,
+        Cat
     }
+
 }
