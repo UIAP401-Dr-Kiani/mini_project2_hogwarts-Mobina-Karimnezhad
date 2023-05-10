@@ -14,7 +14,7 @@ namespace Hogwarts_school
         public string LastName { get; set; }
 
         //--------------------------------------
-        public int BirthYear { get; set; }
+        public string BirthYear { get; set; }
 
         //--------------------------------------
         public string Sexuality { get; set; }

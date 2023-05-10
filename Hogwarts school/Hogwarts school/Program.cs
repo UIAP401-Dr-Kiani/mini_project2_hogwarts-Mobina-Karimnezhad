@@ -12,10 +12,13 @@ namespace Hogwarts_school
         static void Main(string[] args)
         {
             //---------------------------------- reading file -----------------------------
+            Allowed_People A = new Allowed_People();
+            Allowed_People[] allowed_people = new Allowed_People[300];
+
             using (StreamReader file = new StreamReader("TXT_DATA.tsv"))
             {
                 string ln;
-
+                int j = 0;
                 while ((ln = file.ReadLine()) != null)
                 {
                     string[] human = ln.Split('\t').ToArray<string>();
@@ -30,20 +33,24 @@ namespace Hogwarts_school
                     human[7] = race type
                     human[8] = role
                     */
-                    Console.Write(human[0][0]);
+                    allowed_people[j] = new Allowed_People();
+                    allowed_people[j].Name = human[0];
+                    allowed_people[j].LastName = human[1];
+                    allowed_people[j].BirthYear = human[2];
+                    allowed_people[j].Sexuality = human[3];
+                    allowed_people[j].Father = human[4];
+                    allowed_people[j].Username = human[5];
+                    allowed_people[j].Password = human[6];
+                    allowed_people[j].Origin = human[7];
+                    allowed_people[j].Role = human[8];
+                    j++;
                 }
 
 
                 file.Close();
-               
+                Console.WriteLine(allowed_people[0].Name);
             }
-            //Console.Write(hu)
-
-            Allowed_People[] allowed_people = new Allowed_People[300];
-            for (int i = 0; i < 300; i++)
-            {
-                Allowed_People A = new Allowed_People();
-            }
+            
             
             //------------------------------------- menu --------------------------------------
             Console.ForegroundColor = ConsoleColor.Magenta;

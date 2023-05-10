@@ -16,6 +16,20 @@ namespace Hogwarts_school
         //--------------------------------------
         public int Dormitory_Num { get; set; }
 
-        //--------------------------------------
+        //-------------------------------------- Enter ------------------------------------
+        public void Enter()
+        {
+            Console.Write("Username:");
+            string S_Use = Console.ReadLine();
+            Console.Write("Password:");
+            string S_Pass = Console.ReadLine();
+            //???????????????????????????????????????????????
+
+        }
+        //--------------------------------------- Student menu ---------------------------------
+        public void S_menu()
+        {
+           // Console.WriteLine(" 1.Dining Room \n 2.")
+        }
     }
 }
