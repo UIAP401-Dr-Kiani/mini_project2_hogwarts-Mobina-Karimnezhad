@@ -12,8 +12,8 @@ namespace Hogwarts_school
         static void Main(string[] args)
         {
             //---------------------------------- reading file -----------------------------
-            Allowed_People A = new Allowed_People();
-            Allowed_People[] allowed_people = new Allowed_People[300];
+            //Allowed_People A = new Allowed_People();
+            //Allowed_People[] allowed_people = new Allowed_People[300];
 
             using (StreamReader file = new StreamReader("TXT_DATA.tsv"))
             {
@@ -33,22 +33,23 @@ namespace Hogwarts_school
                     human[7] = race type
                     human[8] = role
                     */
-                    allowed_people[j] = new Allowed_People();
-                    allowed_people[j].Name = human[0];
-                    allowed_people[j].LastName = human[1];
-                    allowed_people[j].BirthYear = human[2];
-                    allowed_people[j].Sexuality = human[3];
-                    allowed_people[j].Father = human[4];
-                    allowed_people[j].Username = human[5];
-                    allowed_people[j].Password = human[6];
-                    allowed_people[j].Origin = human[7];
-                    allowed_people[j].Role = human[8];
+                    GlobalVariables.allowed_people[j] = new Allowed_People();
+                    GlobalVariables.allowed_people[j].Name = human[0];
+                    GlobalVariables.allowed_people[j].LastName = human[1];
+                    GlobalVariables.allowed_people[j].BirthYear = human[2];
+                    GlobalVariables.allowed_people[j].Sexuality = human[3];
+                    GlobalVariables.allowed_people[j].Father = human[4];
+                    GlobalVariables.allowed_people[j].Username = human[5];
+                    GlobalVariables.allowed_people[j].Password = human[6];
+                    GlobalVariables.allowed_people[j].Origin = human[7];
+                    GlobalVariables.allowed_people[j].Role = human[8];
                     j++;
+                    
                 }
 
 
                 file.Close();
-                Console.WriteLine(allowed_people[0].Name);
+                
             }
             
             
@@ -62,6 +63,14 @@ namespace Hogwarts_school
             Console.ResetColor();
 
             int menu_Ch = Convert.ToInt32(Console.ReadLine());
+
+            Student Std = new Student();
+
+            if (menu_Ch == 3)
+                Std.SEnter();
+
+            Console.ReadKey();
+
 
         }
     }

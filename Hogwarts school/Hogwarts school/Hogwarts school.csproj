@@ -48,6 +48,7 @@
     <Compile Include="Chemistry.cs" />
     <Compile Include="Dormitory.cs" />
     <Compile Include="Dumbeldore.cs" />
+    <Compile Include="GlobalVariables.cs" />
     <Compile Include="Groups.cs" />
     <Compile Include="Human.cs" />
     <Compile Include="Lessons.cs" />
