@@ -43,6 +43,7 @@ namespace Hogwarts_school
                     GlobalVariables.allowed_people[j].Password = human[6];
                     GlobalVariables.allowed_people[j].Origin = human[7];
                     GlobalVariables.allowed_people[j].Role = human[8];
+                    GlobalVariables.allowed_people[j].Letter = null;
                     j++;
                     
                 }

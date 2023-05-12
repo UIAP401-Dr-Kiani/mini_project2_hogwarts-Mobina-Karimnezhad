@@ -9,8 +9,9 @@ namespace Hogwarts_school
 {
     public class GlobalVariables
     {
-        Allowed_People A = new Allowed_People();
+        public Allowed_People A = new Allowed_People();
         public static Allowed_People[] allowed_people = new Allowed_People[300];
+        public Dumbeldore D = new Dumbeldore();
 
         
     }

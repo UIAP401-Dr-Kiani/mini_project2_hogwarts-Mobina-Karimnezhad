@@ -28,6 +28,13 @@ namespace Hogwarts_school
         //--------------------------------------
         public string[] Letter { get; set; }
 
-        //---------------------------------------
+        //--------------------------------------- Letters Arrays ------------------------------
+        //public void Letter_Arrays()
+        //{
+        //    for (int i = 0; i < 300; i++)
+        //    {
+        //        string[] LA = new string[200];
+        //    }
+        //}
     }
 }
