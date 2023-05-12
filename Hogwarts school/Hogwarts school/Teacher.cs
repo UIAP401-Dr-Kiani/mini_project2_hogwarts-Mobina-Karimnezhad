@@ -29,7 +29,42 @@ namespace Hogwarts_school
 
 
         }
+        //--------------------------------- Enter ------------------------------
+        public void TEnter()
+        {
+            Console.Write("Username:");
+            string S_Use = Console.ReadLine();
+            Console.Write("Password:");
+            string S_Pass = Console.ReadLine();
 
+            for (int i = 0; i < 300; i++)
+            {
+
+                if (GlobalVariables.allowed_people[i].Username == S_Use && GlobalVariables.allowed_people[i].Password == S_Pass)
+                {
+
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"Welcome Mr./Mrs.:{ GlobalVariables.allowed_people[i].LastName}");
+                    Console.ResetColor();
+
+                    T_menu();
+
+                }
+            }
+
+            for (int i = 0; i < 300; i++)
+            {
+                if (GlobalVariables.allowed_people[i].Username != S_Use || GlobalVariables.allowed_people[i].Password != S_Pass)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Wrong username or password!\n");
+                    Console.ResetColor();
+                    TEnter();
+                }
+
+            }
+
+        }
 
     }
 }
