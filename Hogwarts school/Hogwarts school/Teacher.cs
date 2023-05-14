@@ -12,6 +12,7 @@ namespace Hogwarts_school
         //-------------------------------- Home Work ---------------------------
         public void HomeWork()
         {
+            Console.WriteLine("Exercise:");
             string Homework = Console.ReadLine();
             Console.WriteLine($"Exercise :\n{Homework}\n Good job!");
         }
@@ -33,36 +34,40 @@ namespace Hogwarts_school
         public void TEnter()
         {
             Console.Write("Username:");
-            string S_Use = Console.ReadLine();
+            string T_Use = Console.ReadLine();
             Console.Write("Password:");
-            string S_Pass = Console.ReadLine();
+            string T_Pass = Console.ReadLine();
 
             for (int i = 0; i < 300; i++)
             {
 
-                if (GlobalVariables.allowed_people[i].Username == S_Use && GlobalVariables.allowed_people[i].Password == S_Pass)
+                if (GlobalVariables.allowed_people[i].Username == T_Use && GlobalVariables.allowed_people[i].Password == T_Pass)
                 {
 
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine($"Welcome Mr./Mrs.:{ GlobalVariables.allowed_people[i].LastName}");
+                    Console.WriteLine($"Welcome Mr/Mrs { GlobalVariables.allowed_people[i].LastName}");
                     Console.ResetColor();
 
                     T_menu();
+                    break;
 
                 }
-            }
-
-            for (int i = 0; i < 300; i++)
-            {
-                if (GlobalVariables.allowed_people[i].Username != S_Use || GlobalVariables.allowed_people[i].Password != S_Pass)
+                else
                 {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Wrong username or password!\n");
-                    Console.ResetColor();
-                    TEnter();
-                }
+                    if (i == 299)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Wrong username or password!\n");
+                        Console.ResetColor();
+                        TEnter();
+                    }
+                    else
+                        continue;
 
+                }
             }
+
+            
 
         }
 

@@ -23,13 +23,13 @@ namespace Hogwarts_school
             string S_Use = Console.ReadLine();
             Console.Write("Password:");
             string S_Pass = Console.ReadLine();
-            
+
             for (int i = 0; i < 300; i++)
             {
 
                 if (GlobalVariables.allowed_people[i].Username == S_Use && GlobalVariables.allowed_people[i].Password == S_Pass)
                 {
-                    
+
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Correct!\n");
                     Console.ResetColor();
@@ -39,23 +39,28 @@ namespace Hogwarts_school
                     Console.ResetColor();
 
                     S_menu();
+                    break;
 
                 }
-            }
-
-            for ( int i =0; i<300; i++)
-            {
-                if (GlobalVariables.allowed_people[i].Username != S_Use || GlobalVariables.allowed_people[i].Password != S_Pass)
+                else
                 {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Wrong username or password!\n");
-                    Console.ResetColor();
-                    SEnter();
-                }
+                    if (i == 299)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Wrong username or password!\n");
+                        Console.ResetColor();
+                        SEnter();
+                    }
+                    else
+                        continue;
 
+                }
             }
-            
+
+
+
         }
+        
         //--------------------------------------- Student menu ---------------------------------
         public void S_menu()
         {

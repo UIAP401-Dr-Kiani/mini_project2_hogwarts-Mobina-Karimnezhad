@@ -52,8 +52,8 @@ namespace Hogwarts_school
                 file.Close();
                 
             }
-            
-            
+
+
             //------------------------------------- menu --------------------------------------
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("~.~.~.~.~.~.~.~.~.~.~.~. Welcom to Hogwarts .~.~.~.~.~.~.~.~.~.~.~.~");
@@ -65,6 +65,19 @@ namespace Hogwarts_school
 
             int menu_Ch = Convert.ToInt32(Console.ReadLine());
 
+            //---------------------------------- Admin --------------------------
+            if (menu_Ch == 1)
+            {
+
+            }
+            //--------------------------------- Teacher -------------------------
+            Teacher Tchr = new Teacher();
+            if (menu_Ch == 2)
+            {
+                Tchr.TEnter();
+                
+            }
+            //--------------------------------- Stuent --------------------------
             Student Std = new Student();
 
             if (menu_Ch == 3)
