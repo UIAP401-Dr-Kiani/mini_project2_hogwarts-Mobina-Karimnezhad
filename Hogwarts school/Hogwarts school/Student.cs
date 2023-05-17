@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace Hogwarts_school
 {
@@ -65,7 +66,7 @@ namespace Hogwarts_school
         public void S_menu()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine(" 1.Dining Room \n 2.Letters \n 3. ");
+            Console.WriteLine(" 1.Dining Room \n 2.Letters \n 3.Homeworks \n 4.");
             Console.ResetColor();
             int Std_Ch = Console.Read();
             if (Std_Ch == 2)
@@ -73,6 +74,10 @@ namespace Hogwarts_school
 
             }
         }
-        //-----
+        //-------------------------------------- Take lessons ------------------------------------
+        public void Take_Lesson()
+        {
+            var arlist1 = new ArrayList();
+        }
     }
 }
