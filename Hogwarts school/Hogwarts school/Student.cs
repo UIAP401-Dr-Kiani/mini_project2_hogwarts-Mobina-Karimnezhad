@@ -18,6 +18,17 @@ namespace Hogwarts_school
         public int Dormitory_Num { get; set; }
         //--------------------------------------
         Program p = new Program();
+        //--------------------------------------
+        List<string> All_Lessons = new List<string>()
+        {
+            "PE",
+            "Magics",
+            "Botany1",
+            "Botany2",
+            "Botany3",
+            "Botany4",
+            "Chemistry"
+        };
 
         //-------------------------------------- Enter ------------------------------------
         public void SEnter()
@@ -181,6 +192,30 @@ namespace Hogwarts_school
                 int row = Convert.ToInt32(Console.ReadLine());
                 Console.Write("column num :");
                 int column = Convert.ToInt32(Console.ReadLine());
+                //===============================================
+
+                for(int i = 0 ; i < All_Lessons.Count ; i++)
+                {
+                    if (lesson == All_Lessons[i])
+                        All_Lessons.Remove(lesson);
+                }
+
+                for (int i = 0; i < All_Lessons.Count; i++)
+                {
+                    if (lesson != All_Lessons[i])
+                    {
+                        if (i == All_Lessons.Count - 1)
+                        {
+                            Console.WriteLine("Not found!");
+                            break;
+                        }
+                        else
+                            continue;
+                    }
+
+                        
+                }
+                //===============================================
 
                 if (SSchedule[row, column] == null)
                     SSchedule[row, column] = lesson;
