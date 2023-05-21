@@ -21,7 +21,7 @@ namespace Hogwarts_school
         public void T_menu()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine(" 1.Add Exercise \n 2.Sghedule \n 3. ");
+            Console.WriteLine(" 1.Add Exercise \n 2.Schedule \n 3.Exit ");
             Console.ResetColor();
             int Tchr_Ch = Convert.ToInt32(Console.ReadLine());
 
@@ -29,6 +29,12 @@ namespace Hogwarts_school
                 HomeWork();
             if (Tchr_Ch == 2)
                 TSchedule();
+            if (Tchr_Ch == 3)
+            {
+                Program p = new Program();
+                p.main_menu();
+            }
+                
 
 
 
@@ -134,9 +140,9 @@ namespace Hogwarts_school
                         for (int j = 0; j < 5; j++)
                         {
                             if (TSchedule[i, j] == null)
-                                Console.Write("     ");
+                                Console.Write("                       ");
                             else
-                                Console.Write($"{TSchedule[i, j]}\t");
+                                Console.Write($"{TSchedule[i, j]}\t\t\t");
                         }
                         Console.Write("\n\n\n");
                     }
@@ -148,7 +154,7 @@ namespace Hogwarts_school
                     else
                     {
                         GlobalVariables.Schedules.Add(TSchedule);
-                        break;
+                        T_menu();
                     }
                         
 
@@ -192,7 +198,7 @@ namespace Hogwarts_school
                     else
                     {
                         GlobalVariables.Schedules.Add(TSchedule);
-                        break;
+                        T_menu();
                     }
                         
 
@@ -215,6 +221,7 @@ namespace Hogwarts_school
 
 
         }
+        //----------------------------------------------------------------------------------------
 
 
     }

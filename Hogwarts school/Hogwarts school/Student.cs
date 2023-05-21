@@ -16,6 +16,8 @@ namespace Hogwarts_school
 
         //--------------------------------------
         public int Dormitory_Num { get; set; }
+        //--------------------------------------
+        Program p = new Program();
 
         //-------------------------------------- Enter ------------------------------------
         public void SEnter()
@@ -66,13 +68,58 @@ namespace Hogwarts_school
         public void S_menu()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine(" 1.Dining Room \n 2.Letters \n 3.Homeworks \n 4.");
+            Console.WriteLine(" 1.Dining Room \n 2.Letters \n 3.Homeworks \n 4.Exit");
             Console.ResetColor();
-            int Std_Ch = Console.Read();
-            if (Std_Ch == 2)
+            int Std_Ch = Convert.ToInt32(Console.ReadLine());
+            //------------------------------------Dining room----------------------------------
+            if (Std_Ch == 1)
             {
+                Console.WriteLine("Enter your term :");
+                Term = Convert.ToInt32(Console.ReadLine());
 
+
+                if (Term == 1)
+                {
+                    string[,] S1Schedule = new string[6, 5];
+
+                    S1Schedule[0,0] = "    ";
+                    S1Schedule[0,1] = "8-10";
+                    S1Schedule[0,2] = "10-12";
+                    S1Schedule[0,3] = "14-16";
+                    S1Schedule[0,4] = "16-18";
+                    S1Schedule[1,0] = "Mon";
+                    S1Schedule[2,0] = "Tue";
+                    S1Schedule[3,0] = "Wed";
+                    S1Schedule[4,0] = "Thu";
+                    S1Schedule[5,0] = "Fri";
+                    S1Schedule[2,3] = "PE";
+                    S1Schedule[2,2] = "Magics";
+                    S1Schedule[3,3] = "Botany1";
+                    S1Schedule[1,3] = "Chemistry";
+
+                    for (int j = 0; j < 6; j++)
+                    {
+                        for (int k = 0; k < 5; k++)
+                        {
+                            if (S1Schedule[j, k] == null)
+                                Console.Write("                       ");
+                            else
+                                Console.Write($"{S1Schedule[j, k]}\t\t\t");
+                        }
+                        Console.Write("\n\n\n");
+                    }
+
+
+
+                }
+                else
+                {
+                    Take_Lesson();
+                }
             }
+            if (Std_Ch == 4)
+                p.main_menu();
+
         }
         //-------------------------------------- Take lessons ------------------------------------
         public void Take_Lesson()
@@ -87,14 +134,14 @@ namespace Hogwarts_school
                         if (B[j, k] == null)
                             Console.Write("                       ");
                         else
-                            Console.Write($"{B[i, j]}\t\t\t");
+                            Console.Write($"{B[j, k]}\t\t\t");
                     }
                     Console.Write("\n\n\n");
                 }
                 Console.WriteLine("======================================================");
 
             }
-            //=====================================================================================
+            //========================================== not first term ===========================================
             string[,] SSchedule = new string[6, 5];
 
             SSchedule[0, 0] = "    ";
@@ -149,13 +196,14 @@ namespace Hogwarts_school
                     for (int j = 0; j < 5; j++)
                     {
                         if (SSchedule[i, j] == null)
-                            Console.Write("     ");
+                            Console.Write("                       ");
                         else
-                            Console.Write($"{SSchedule[i, j]}\t");
+                            Console.Write($"{SSchedule[i, j]}\t\t\t");
                     }
                     Console.Write("\n\n\n");
                 }
-
+                if (k < 3)
+                    continue;
                 Console.Write("Continue ?(Y/N)");
                 string answer = Console.ReadLine();
                 if (answer == "Y" || answer == "y")
@@ -163,13 +211,18 @@ namespace Hogwarts_school
                 else
                 {
                     GlobalVariables.Schedules.Add(SSchedule);
-                    break;
+                    S_menu();
+                    
                 }
 
             
 
                 }
             }
+        //-----------------------------------------------------------------------------------------------
+        
+        
+
         }
     }
 

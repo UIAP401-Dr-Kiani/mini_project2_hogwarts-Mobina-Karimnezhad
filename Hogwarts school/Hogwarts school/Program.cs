@@ -7,8 +7,37 @@ using System.Threading.Tasks;
 
 namespace Hogwarts_school
 {
-    class Program
+    public class Program
     {
+        public void main_menu()
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(" 1.Admin \n 2.Teacher \n 3.Student ");
+            Console.ResetColor();
+
+            int menu_Ch = Convert.ToInt32(Console.ReadLine());
+            //---------------------------------- Admin --------------------------
+            if (menu_Ch == 1)
+            {
+
+            }
+            //--------------------------------- Teacher -------------------------
+            Teacher Tchr = new Teacher();
+            if (menu_Ch == 2)
+            {
+                Tchr.TEnter();
+
+            }
+            //--------------------------------- Stuent --------------------------
+            Student Std = new Student();
+
+            if (menu_Ch == 3)
+                Std.SEnter();
+
+            Console.ReadKey();
+
+
+        }
         static void Main(string[] args)
         {
             //---------------------------------- reading file -----------------------------
@@ -58,34 +87,13 @@ namespace Hogwarts_school
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("~.~.~.~.~.~.~.~.~.~.~.~. Welcom to Hogwarts .~.~.~.~.~.~.~.~.~.~.~.~");
             Console.ResetColor();
-
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine(" 1.Admin \n 2.Teacher \n 3.Student ");
-            Console.ResetColor();
-
-            int menu_Ch = Convert.ToInt32(Console.ReadLine());
-
-            //---------------------------------- Admin --------------------------
-            if (menu_Ch == 1)
-            {
-
-            }
-            //--------------------------------- Teacher -------------------------
-            Teacher Tchr = new Teacher();
-            if (menu_Ch == 2)
-            {
-                Tchr.TEnter();
-                
-            }
-            //--------------------------------- Stuent --------------------------
-            Student Std = new Student();
-
-            if (menu_Ch == 3)
-                Std.SEnter();
-
-            Console.ReadKey();
+            Program p = new Program();
+            p.main_menu();
+            
+        
+            
 
 
-        }
+    }
     }
 }
