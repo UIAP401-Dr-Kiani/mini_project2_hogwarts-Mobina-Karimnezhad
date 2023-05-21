@@ -18,6 +18,7 @@ namespace Hogwarts_school
         public int Dormitory_Num { get; set; }
         //--------------------------------------
         Program p = new Program();
+        Teacher t = new Teacher();
         //--------------------------------------
         List<string> All_Lessons = new List<string>()
         {
@@ -128,6 +129,35 @@ namespace Hogwarts_school
                     Take_Lesson();
                 }
             }
+            //-------------------------------------------- Homework ------------------------------------
+            if (Std_Ch == 3)
+            {
+                for (int i = 0; i < GlobalVariables.Schedules.Count; i++)
+                {
+                    if ("Botany1" == All_Lessons[i] || "Botany2" == All_Lessons[i] || "Botany3" == All_Lessons[i] || "Botany4" == All_Lessons[i])
+                    {
+                        string Homework = t.Homework_lst[(t.Homework_lst.Count) - 1];
+                        Console.WriteLine($"Exercise :\n{Homework}\n Good job!");
+                    }   
+                }
+
+                for (int i = 0; i < All_Lessons.Count; i++)
+                {
+                    if ("Botany1" != All_Lessons[i] && "Botany2" != All_Lessons[i] && "Botany3" != All_Lessons[i] && "Botany4" != All_Lessons[i])
+                    {
+                        if (i == All_Lessons.Count - 1)
+                        {
+                            Console.WriteLine("No homework! :)");
+                            break;
+                        }
+                        else
+                            continue;
+                    }
+
+
+                }
+            }
+            //------------------------------------------- Exit --------------------------------------
             if (Std_Ch == 4)
                 p.main_menu();
 

@@ -4,18 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
-
 namespace Hogwarts_school
 {
-    class Teacher : Allowed_People
+    public class Teacher : Allowed_People
     {
         public bool Same_Time { get; set; }
+        public List<string> Homework_lst = new List<string>();
         //-------------------------------- Home Work ---------------------------
         public void HomeWork()
         {
             Console.WriteLine("Exercise:");
             string Homework = Console.ReadLine();
-            Console.WriteLine($"Exercise :\n{Homework}\n Good job!");
+            Homework_lst.Add(Homework);
         }
         //-------------------------------------- Teacher menu ------------------------------------
         public void T_menu()
