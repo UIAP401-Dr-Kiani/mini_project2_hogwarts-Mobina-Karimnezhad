@@ -32,11 +32,14 @@ namespace Hogwarts_school
                 for(int j = 1; j < 6; j++)
                     for(int k = 1; k < 3; k++)
                     {
-                        string code = $"{i}{j}{k}";
+                        string code = $"Your code is : {i}{j}{k}";
                         Codes.Add(code); 
                     }
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(Codes[i]);
+            Console.ResetColor();
             i++;
+
         }
         //-------------------------------------------------------------------------------------------
 

@@ -8,24 +8,26 @@ namespace Hogwarts_school
 {
     public class Dumbeldore : Allowed_People
     {
+        Program P = new Program();
+        //------------------------------------- Dumbeldore Menu ------------------------------
+        public void D_menu()
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(" 1.Send letter \n 4.Exit");
+            Console.ResetColor();
+            int Admin_Ch = Convert.ToInt32(Console.ReadLine());
+            //================================= 1
+            if (Admin_Ch == 1)
+                Send_Ltr1();
+            //================================= 2
+            if (Admin_Ch == 2)
+                P.main_menu();
+                
+        }
         //------------------------------------- Send Letter ----------------------------------
         public void Send_Ltr1() //It's for sending students the invitation. 
         {
-            //for (int j = 0; j < 300; j++)
-            //{
-            //    int std_num = 0;
-            //    if (GlobalVariables.allowed_people[j].Role == "student")
-            //        std_num++;
-            //}
-            ////for (int j = 0; j < ) 
-            //for( int i = 0; i <300; i++)
-            //{
-            //    if( GlobalVariables.allowed_people[i].Role == "student")
-            //    {
-
-
-            //    }
-            //}
+       
             for (int i = 0; i < 300; i++)
             {
                 if (GlobalVariables.allowed_people[i].Role == "student")
@@ -33,7 +35,7 @@ namespace Hogwarts_school
                     Allowed_People A = new Allowed_People();
                     for (int j = 0; j < 100; j++)
                     {
-                        A.Letter[j] = "Hi";
+                        A.Letter[j] = "Hello dear students\nWe are pleased to inform you that you have been accepted at Hogwarts school of witchcraft and wizardry.\nPlease find enclosed a list of all necessary books and equipment.\nHeadmaster: Albus Dumbeldore";
                     }
                 }
 

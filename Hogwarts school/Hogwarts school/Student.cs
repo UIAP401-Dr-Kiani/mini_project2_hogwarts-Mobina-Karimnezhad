@@ -7,7 +7,7 @@ using System.Collections;
 
 namespace Hogwarts_school
 {
-    class Student : Allowed_People
+    public class Student : Allowed_People
     {
         public int Passed { get; set; }
 
@@ -33,7 +33,7 @@ namespace Hogwarts_school
         };
 
         //-------------------------------------- Enter ------------------------------------
-        public int SEnter()
+        public void SEnter()
         {
             Console.Write("Username:");
             string S_Use = Console.ReadLine();
@@ -45,7 +45,8 @@ namespace Hogwarts_school
 
                 if (GlobalVariables.allowed_people[i].Username == S_Use && GlobalVariables.allowed_people[i].Password == S_Pass)
                 {
-                    int index = i;
+                    //static int index ;
+
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Correct!\n");
                     Console.ResetColor();
@@ -95,7 +96,9 @@ namespace Hogwarts_school
                 if (Term == 1)
                 {
                     //=============================== group
-                    rand_grp(index);                   
+                    rand_grp();
+                    //============================== Dormitory Code
+                    Dormitory.code();                 
                     //============================== schedule
                     string[,] S1Schedule = new string[6, 5];
 
@@ -126,12 +129,13 @@ namespace Hogwarts_school
                         Console.Write("\n\n\n");
                     }
 
-
+                    S_menu();
 
                 }
                 else
                 {
                     Take_Lesson();
+                    S_menu();
                 }
             }
             //-------------------------------------------- Homework ------------------------------------
@@ -290,13 +294,16 @@ namespace Hogwarts_school
                 }
             }
         //---------------------------------------- random group ------------------------------------------
-        public void rand_grp(int index)
+        public void rand_grp()
         {
             string[] groups = { "Hufflepuff", "Gryffindor", "Ravenclaw", "Slytherin" };
             Random rand = new Random();
             int Index = rand.Next(4);
-            string grp = groups[index];
+            string grp = groups[Index];
+
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(grp);
+            Console.ResetColor();
 
             //========================= list of groups
            // if(grp == "Hufflepuff")

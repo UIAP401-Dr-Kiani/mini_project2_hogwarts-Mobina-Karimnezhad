@@ -84,10 +84,11 @@ namespace Hogwarts_school
 
 
             //------------------------------------- menu --------------------------------------
+            Dumbeldore D = new Dumbeldore();
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("~.~.~.~.~.~.~.~.~.~.~.~. Welcom to Hogwarts .~.~.~.~.~.~.~.~.~.~.~.~");
             Console.ResetColor();
-            Program p = new Program();
+            Program p = new Program();           
             p.main_menu();
             
         
