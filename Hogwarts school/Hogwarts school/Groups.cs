@@ -14,7 +14,10 @@ namespace Hogwarts_school
         public int Score { get; set; }
 
         //--------------------------------------
-        List<string> Members = new List<string>();
+        public List<string> Hufflepuff_Members = new List<string>();
+        public List<string> Gryffindor_Members = new List<string>();
+        public List<string> Ravenclaw_Members = new List<string>();
+        public List<string> Slytherin_Members = new List<string>();
 
         //--------------------------------------
         List<string> Queeditch = new List<string>();

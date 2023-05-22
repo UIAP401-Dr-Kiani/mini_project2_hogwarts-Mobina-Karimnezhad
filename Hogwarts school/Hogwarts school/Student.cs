@@ -19,6 +19,7 @@ namespace Hogwarts_school
         //--------------------------------------
         Program p = new Program();
         Teacher t = new Teacher();
+        Groups g = new Groups();
         //--------------------------------------
         List<string> All_Lessons = new List<string>()
         {
@@ -32,7 +33,7 @@ namespace Hogwarts_school
         };
 
         //-------------------------------------- Enter ------------------------------------
-        public void SEnter()
+        public int SEnter()
         {
             Console.Write("Username:");
             string S_Use = Console.ReadLine();
@@ -44,7 +45,7 @@ namespace Hogwarts_school
 
                 if (GlobalVariables.allowed_people[i].Username == S_Use && GlobalVariables.allowed_people[i].Password == S_Pass)
                 {
-
+                    int index = i;
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Correct!\n");
                     Console.ResetColor();
@@ -70,6 +71,7 @@ namespace Hogwarts_school
                         continue;
 
                 }
+                
             }
 
 
@@ -92,6 +94,9 @@ namespace Hogwarts_school
 
                 if (Term == 1)
                 {
+                    //=============================== group
+                    rand_grp(index);                   
+                    //============================== schedule
                     string[,] S1Schedule = new string[6, 5];
 
                     S1Schedule[0,0] = "    ";
@@ -284,7 +289,20 @@ namespace Hogwarts_school
 
                 }
             }
-        //-----------------------------------------------------------------------------------------------
+        //---------------------------------------- random group ------------------------------------------
+        public void rand_grp(int index)
+        {
+            string[] groups = { "Hufflepuff", "Gryffindor", "Ravenclaw", "Slytherin" };
+            Random rand = new Random();
+            int Index = rand.Next(4);
+            string grp = groups[index];
+            Console.WriteLine(grp);
+
+            //========================= list of groups
+           // if(grp == "Hufflepuff")
+                //g.Hufflepuff_Members.Add($"{} {}")
+
+        }
         
         
 
