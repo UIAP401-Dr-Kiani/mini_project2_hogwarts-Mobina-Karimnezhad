@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hogwarts_school
 {
-    class Dormitory
+    public class Dormitory
     {
         public string Group { get; set; }
 
@@ -21,14 +21,24 @@ namespace Hogwarts_school
 
         //--------------------------------------
         public string Sexuality { get; set; }
+        //--------------------------------------
+        public static List<string> Codes = new List<string>();
 
         //-------------------------------------- static code ---------------------------------------
+        static int i = 0;
         public static void code()
         {
-            int i, j, k = 1;
-             
+            for(int i = 1; i < 5; i++)
+                for(int j = 1; j < 6; j++)
+                    for(int k = 1; k < 3; k++)
+                    {
+                        string code = $"{i}{j}{k}";
+                        Codes.Add(code); 
+                    }
+            Console.WriteLine(Codes[i]);
+            i++;
         }
-
+        //-------------------------------------------------------------------------------------------
 
 
     }
