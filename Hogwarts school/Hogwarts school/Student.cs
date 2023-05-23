@@ -33,6 +33,7 @@ namespace Hogwarts_school
         };
 
         //-------------------------------------- Enter ------------------------------------
+        int index;
         public void SEnter()
         {
             Console.Write("Username:");
@@ -45,7 +46,7 @@ namespace Hogwarts_school
 
                 if (GlobalVariables.allowed_people[i].Username == S_Use && GlobalVariables.allowed_people[i].Password == S_Pass)
                 {
-                    //static int index ;
+                    index = i ;
 
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Correct!\n");
@@ -95,6 +96,7 @@ namespace Hogwarts_school
 
                 if (Term == 1)
                 {
+                    Console.WriteLine("----------------------------------------------------------------------------");
                     //=============================== group
                     rand_grp();
                     //============================== Dormitory Code
@@ -128,7 +130,7 @@ namespace Hogwarts_school
                         }
                         Console.Write("\n\n\n");
                     }
-
+                    Console.WriteLine("----------------------------------------------------------------------------");
                     S_menu();
 
                 }
@@ -137,6 +139,11 @@ namespace Hogwarts_school
                     Take_Lesson();
                     S_menu();
                 }
+            }
+            //-------------------------------------------- Letters -------------------------------------
+            if(Std_Ch == 2)
+            {
+
             }
             //-------------------------------------------- Homework ------------------------------------
             if (Std_Ch == 3)
@@ -306,14 +313,24 @@ namespace Hogwarts_school
             Console.ResetColor();
 
             //========================= list of groups
-           // if(grp == "Hufflepuff")
-                //g.Hufflepuff_Members.Add($"{} {}")
-
+            if (grp == "Hufflepuff")
+                g.Hufflepuff_Members.Add($"{GlobalVariables.allowed_people[index].Name} {GlobalVariables.allowed_people[index].LastName}");
+            if (grp == "Gryffindor")
+                g.Hufflepuff_Members.Add($"{GlobalVariables.allowed_people[index].Name} {GlobalVariables.allowed_people[index].LastName}");
+            if (grp == "Ravenclaw")
+                g.Hufflepuff_Members.Add($"{GlobalVariables.allowed_people[index].Name} {GlobalVariables.allowed_people[index].LastName}");
+            if (grp == "Slytherin")
+                g.Hufflepuff_Members.Add($"{GlobalVariables.allowed_people[index].Name} {GlobalVariables.allowed_people[index].LastName}");
+            //for test
+            //Console.WriteLine(g.Hufflepuff_Members[0]);
+            //Console.WriteLine(g.Gryffindor_Members[0]);
+            //Console.WriteLine(g.Ravenclaw_Members[0]);
+            //Console.WriteLine(g.Slytherin_Members[0]);
         }
-        
-        
 
-        }
+
+
+    }
     }
 
 
