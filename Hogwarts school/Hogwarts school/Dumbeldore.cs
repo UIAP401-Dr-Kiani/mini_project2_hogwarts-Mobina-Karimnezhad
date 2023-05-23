@@ -10,7 +10,7 @@ namespace Hogwarts_school
     {
         Program P = new Program();
         //------------------------------------- Dumbeldore Menu ------------------------------
-        public void D_menu()
+        public static void D_menu()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine(" 1.Send letter \n 4.Exit");
@@ -21,11 +21,11 @@ namespace Hogwarts_school
                 Send_Ltr1();
             //================================= 2
             if (Admin_Ch == 2)
-                P.main_menu();
+                Program.main_menu();
                 
         }
         //------------------------------------- Send Letter ----------------------------------
-        public void Send_Ltr1() //It's for sending students the invitation. 
+        public static void Send_Ltr1() //It's for sending students the invitation. 
         {
        
             for (int i = 0; i < 300; i++)

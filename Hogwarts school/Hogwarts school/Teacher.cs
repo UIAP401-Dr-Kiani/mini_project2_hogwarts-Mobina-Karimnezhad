@@ -32,7 +32,7 @@ namespace Hogwarts_school
             if (Tchr_Ch == 3)
             {
                 Program p = new Program();
-                p.main_menu();
+                Program.main_menu();
             }
                 
 

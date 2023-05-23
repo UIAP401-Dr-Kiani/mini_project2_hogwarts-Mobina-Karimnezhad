@@ -9,9 +9,9 @@ namespace Hogwarts_school
 {
     public class Program
     {
-        Dumbeldore d = new Dumbeldore();
+        //Dumbeldore d = new Dumbeldore();
 
-        public void AEnter()
+        public static void AEnter()
         {
             Console.Write("Username:");
             string Ausername = Console.ReadLine();
@@ -21,14 +21,14 @@ namespace Hogwarts_school
             if (Ausername == "Admin" && Apassword == "Admin")
             {
                 Console.WriteLine("Correct!");
-                d.D_menu();
+                Dumbeldore.D_menu();
             }
                
 
             else
                 AEnter();
         }
-        public void main_menu()
+        public static void main_menu()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine(" 1.Admin \n 2.Teacher \n 3.Student ");
@@ -109,7 +109,7 @@ namespace Hogwarts_school
             Console.WriteLine("~.~.~.~.~.~.~.~.~.~.~.~. Welcom to Hogwarts .~.~.~.~.~.~.~.~.~.~.~.~");
             Console.ResetColor();
             Program p = new Program();           
-            p.main_menu();
+            Program.main_menu();
             
         
             
