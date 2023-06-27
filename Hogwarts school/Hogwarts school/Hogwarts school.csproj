@@ -43,8 +43,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Allowed_People.cs" />
+    <Compile Include="Botany.cs" />
+    <Compile Include="Chemistry.cs" />
+    <Compile Include="Dormitory.cs" />
+    <Compile Include="Dumbeldore.cs" />
+    <Compile Include="GlobalVariables.cs" />
+    <Compile Include="Groups.cs" />
+    <Compile Include="Human.cs" />
+    <Compile Include="Lessons.cs" />
+    <Compile Include="Magic.cs" />
+    <Compile Include="Origin_Kinds.cs" />
+    <Compile Include="PE.cs" />
+    <Compile Include="Pet_Kinds.cs" />
+    <Compile Include="Plant.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Role_Kinds.cs" />
+    <Compile Include="Student.cs" />
+    <Compile Include="Teacher.cs" />
+    <Compile Include="Type_Kinds.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
